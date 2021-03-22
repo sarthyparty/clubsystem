@@ -1,8 +1,5 @@
-package com.ephs.clubsystem.controller;
+package com.ephs.clubsystem.club;
 
-import com.ephs.clubsystem.model.User;
-import com.ephs.clubsystem.model.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
