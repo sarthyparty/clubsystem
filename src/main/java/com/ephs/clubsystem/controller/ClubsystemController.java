@@ -1,4 +1,4 @@
-package com.ephs.clubsystem.club;
+package com.ephs.clubsystem.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.ephs.clubsystem.student;
+package com.ephs.clubsystem.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,10 +53,10 @@ public class Student {
     }
     @Override
     public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
+        return "Student: {" +
+                "id: " + id +
+                ", email: '" + email + '\'' +
+                ", password: '" + password + '\'' +
                 '}';
     }
 
