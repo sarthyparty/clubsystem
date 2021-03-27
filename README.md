@@ -14,9 +14,9 @@ Log in to root. (mysql -u root -p). The default password is blank, so just hit e
 
 Once you have entered your password correctly (blank if you haven't set one), you should open up to the mysql command line. We'll first create the database. If you did not create a password, press enter and the mysql command line should still open.
 
-Run "create database club_system;"
+Run (create database club_system;)
 
-Then we'll create a user and grant privileges to it. Run "create user 'springBootApp'@'%' identified by 'futurist';" Run "grant all on club_system.* to 'springBootApp'@'%';" Finally, run "flush privileges;"
+Then we'll create a user and grant privileges to it. Run (create user 'springBootApp'@'%' identified by 'futurist';) Run (grant all on club_system.* to 'springBootApp'@'%';) Finally, run (flush privileges;)
 
 Now, you need to download some library modules in the following steps:  
 In IntelliJ, go to File>Project Structure.  
