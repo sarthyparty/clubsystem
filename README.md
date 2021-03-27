@@ -10,9 +10,9 @@ Next, open up the project in an IDE (preferably intelliJ).
 
 Open up terminal and start mysql. (mysql.server start)
 
-Log in to root. (mysql -u root -p)
+Log in to root. (mysql -u root -p). The default password is blank, so just hit enter when it prompts you (if you haven't set a password).
 
-Once you have entered your password correctly (or created a password), you should open up to the mysql command line. We'll first create the database. If you did not create a password, press enter and the mysql command line should still open.
+Once you have entered your password correctly (blank if you haven't set one), you should open up to the mysql command line. We'll first create the database. If you did not create a password, press enter and the mysql command line should still open.
 
 Run "create database club_system;"
 
