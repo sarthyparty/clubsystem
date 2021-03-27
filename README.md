@@ -18,10 +18,10 @@ Run "create database club_system;"
 
 Then we'll create a user and grant privileges to it. Run "create user 'springBootApp'@'%' identified by 'futurist';" Run "grant all on club_system.* to 'springBootApp'@'%';" Finally, run "flush privileges;"
 
-Now, you need to download some library modules in the following steps:
-In IntelliJ, go to File>Project Structure. 
-Under Project Settings, click Libraries. 
-Click the + symbol at the upper left>select From Maven...>paste this: mysql:mysql-connector-java:8.0.23 and check the "Download To" box>Press OK
-Select all 3 options (clubsystem, clubsystem.main, clubsystem.test)>Press Apply>Press OK 
+Now, you need to download some library modules in the following steps:  
+In IntelliJ, go to File>Project Structure.  
+Under Project Settings, click Libraries.  
+Click the + symbol at the upper left>select From Maven...>paste this: mysql:mysql-connector-java:8.0.23 and check the "Download To" box>Press OK  
+Select all 3 options (clubsystem, clubsystem.main, clubsystem.test)>Press Apply>Press OK  
 
-Now if you have this opened in intelliJ, you should be able to just hit the play button in the top right to run it.
+Now if you have this opened in intelliJ, you should be able to just hit the play button in the top right to run it.  
