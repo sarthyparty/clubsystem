@@ -6,9 +6,9 @@ import java.io.Serializable;
 
 @Embeddable
 public class UserClubKey implements Serializable {
-    @Column(name = "userID")
+    @Column(name = "userid")
     private Long studentId;
 
-    @Column(name = "clubID")
+    @Column(name = "clubid")
     private Long courseId;
 }

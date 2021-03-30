@@ -9,12 +9,12 @@ public class UserClubRelationship {
 
     @ManyToOne
     @MapsId("studentId")
-    @JoinColumn(name = "userID")
+    @JoinColumn(name = "userid")
     private User user;
 
     @ManyToOne
     @MapsId("courseId")
-    @JoinColumn(name = "clubID")
+    @JoinColumn(name = "clubid")
     private Club club;
 
     private String fields;
