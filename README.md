@@ -25,3 +25,4 @@ Click the + symbol at the upper left>select From Maven...>paste this: mysql:mysq
 Select all 3 options (clubsystem, clubsystem.main, clubsystem.test)>Press Apply>Press OK  
 
 Now if you have this opened in intelliJ, you should be able to just hit the play button in the top right to run it.  
+
