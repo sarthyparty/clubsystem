@@ -1,10 +1,8 @@
 package com.ephs.clubsystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -14,6 +12,8 @@ public class User {
     private String name;
     private String email;
     private String password;
+    @OneToMany(mappedBy = "club")
+    private Set<UserClubRelationship> userClubRelationships;
 
     public long getId() {
         return id;

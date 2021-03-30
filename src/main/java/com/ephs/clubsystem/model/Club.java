@@ -1,10 +1,8 @@
 package com.ephs.clubsystem.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Club {
@@ -13,6 +11,9 @@ public class Club {
     private long id;
     private String name;
     private String template;
+    private String defaults;
+    @OneToMany(mappedBy = "user")
+    private Set<UserClubRelationship> userClubRelationships;
 
     public long getId() {
         return id;
@@ -31,8 +32,15 @@ public class Club {
     public String getTemplate() {
         return template;
     }
-    public void setEmail(String template) {
+    public void setTemplate(String template) {
         this.template = template;
+    }
+
+    public String getDefaults() {
+        return defaults;
+    }
+    public void setDefaults(String defaults) {
+        this.defaults = defaults;
     }
 
     @Override
