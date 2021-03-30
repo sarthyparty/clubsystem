@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class Student {
+public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
@@ -42,9 +42,9 @@ public class Student {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Student)) return false;
-        Student student = (Student) o;
-        return Objects.equals(email, student.email);
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return Objects.equals(email, user.email);
     }
 
     @Override
