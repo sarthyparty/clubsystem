@@ -22,7 +22,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping(path="") // Map ONLY POST Requests
+    @PostMapping(path="/") // Map ONLY POST Requests
     public @ResponseBody
     String addNewUser (@RequestParam String name
             , @RequestParam String email, @RequestParam String password) {
