@@ -28,7 +28,7 @@ public class ClubsystemApplication {
                     .authorizeRequests()
                     .antMatchers(HttpMethod.POST, "/user/login").permitAll()
                     .antMatchers(HttpMethod.POST, "/user").permitAll()
-                    .antMatchers(HttpMethod.POST, "").permitAll()
+                    .antMatchers(HttpMethod.POST, "/").permitAll()
                     .anyRequest().authenticated();
         }
     }
