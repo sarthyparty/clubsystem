@@ -51,12 +51,18 @@ public class UserController {
         } else {
             if (s.get(0).getPassword().equals(password)) {
                 String token = getJWTToken(email);
-                return s.toString() + "\n" + token;
+                return s.get(0).toString() + "\n" + token;
             } else {
                 return "Login Failed";
             }
         }
     }
+    @GetMapping(path="/{id}")
+    public @ResponseBody
+    String getUser(@PathVariable long id) {
+        return userRepository.findById(id).get(0).toString();
+    }
+
     @GetMapping(path="/all")
     public @ResponseBody Iterable<User> getAllUsers() {
         // This returns a JSON or XML with the users
