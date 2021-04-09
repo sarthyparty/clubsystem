@@ -41,8 +41,9 @@ public class UserController {
                 return "Email in use.";
             }
         } catch (Exception e) {
-            System.out.println(e.getStackTrace().toString());
-            return e.getStackTrace().toString();
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+            return e.getMessage();
         }
     }
     @PostMapping(path="/login") // Map ONLY POST Requests
