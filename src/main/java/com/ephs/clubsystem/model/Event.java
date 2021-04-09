@@ -47,7 +47,7 @@ public class Event {
                     joinColumns = @JoinColumn(name = "userID"),
                     inverseJoinColumns = @JoinColumn(name = "eventID"))
 
-    Set <User> likes;
+    Set <User> users;
     @ManyToOne
     @JoinColumn(name="club_id")
     private Club club_;

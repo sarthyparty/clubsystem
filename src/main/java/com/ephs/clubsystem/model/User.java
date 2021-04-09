@@ -59,8 +59,8 @@ public class User {
                 ", password: '" + password + '\'' +
                 '}';
     }
-    @ManyToMany(mappedBy = "likes")
-    Set<Event> likedEvents;
+    @ManyToMany(mappedBy = "users")
+    Set<Event> events;
 
 
 }
