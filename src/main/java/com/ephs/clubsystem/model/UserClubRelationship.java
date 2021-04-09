@@ -2,7 +2,7 @@ package com.ephs.clubsystem.model;
 
 import javax.persistence.*;
 
-@Table(name="user_club_relationship", schema = "clubsystem")
+@Table(name="user_club_relationship", schema = "public")
 @Entity
 public class UserClubRelationship {
     @EmbeddedId
@@ -19,7 +19,7 @@ public class UserClubRelationship {
     private Club club;
 
     private String fields;
-    private boolean isAdmin;
+    private boolean is_admin;
 
 
 }

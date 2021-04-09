@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
-@Table(name="club", schema = "clubsystem")
+@Table(name="club", schema = "public")
 @Entity
 public class Club {
     @Id
@@ -14,7 +14,7 @@ public class Club {
     private String template;
     private String defaults;
     @OneToMany(mappedBy = "user")
-    private Set<UserClubRelationship> userClubRelationships;
+    private Set<UserClubRelationship> user_club_relationships;
 
     public long getId() {
         return id;
