@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
+@Table(name="club", schema = "clubsystem")
 @Entity
 public class Club {
     @Id

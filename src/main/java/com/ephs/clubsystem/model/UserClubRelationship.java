@@ -2,6 +2,7 @@ package com.ephs.clubsystem.model;
 
 import javax.persistence.*;
 
+@Table(name="user_club_relationship", schema = "clubsystem")
 @Entity
 public class UserClubRelationship {
     @EmbeddedId
