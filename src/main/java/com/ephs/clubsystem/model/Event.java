@@ -9,9 +9,11 @@ public class Event {
     private long id;
     private String name;
     private String description;
-    private String startdate;
-    private String enddate;
     private String club;
+    @Basic
+    private java.sql.Timestamp startdate;
+    @Basic
+    private java.sql.Timestamp enddate;
     public long getId() {
         return id;
     }
@@ -29,14 +31,16 @@ public class Event {
     }
     public void setDescription(String description) { this.description = description; }
 
-    public String getEnddate() {
+    public java.sql.Timestamp getEnddate() {
         return enddate;
     }
-    public void setEnddate(String enddate) { this.enddate= enddate; }
-    public String getStartdate() { return startdate; }
+    public void setEnddate(String enddate) { this.enddate=java.sql.Timestamp.valueOf(enddate);}
+    public java.sql.Timestamp getStartdate() { return startdate; }
     public void setStartdate(String startdate) {
-        this.startdate= startdate;
+        this.startdate=java.sql.Timestamp.valueOf(startdate);
     }
+
+
     @ManyToMany
             @JoinTable(
                     name= "UserEventRelationship",
