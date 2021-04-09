@@ -29,15 +29,19 @@ public class UserController {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
 
-        if (userRepository.findByEmail(email).size()==0) {
-            User n = new User();
-            n.setName(name);
-            n.setEmail(email);
-            n.setPassword(password);
-            userRepository.save(n);
-            return "Saved";
-        } else {
-            return "Email in use.";
+        try {
+            if (userRepository.findByEmail(email).size()==0) {
+                User n = new User();
+                n.setName(name);
+                n.setEmail(email);
+                n.setPassword(password);
+                userRepository.save(n);
+                return "Saved";
+            } else {
+                return "Email in use.";
+            }
+        } catch (Exception e) {
+            System.out.println(e.getStackTrace().toString());
         }
     }
     @PostMapping(path="/login") // Map ONLY POST Requests
