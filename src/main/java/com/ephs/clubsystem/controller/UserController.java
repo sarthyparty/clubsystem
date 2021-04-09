@@ -42,6 +42,7 @@ public class UserController {
             }
         } catch (Exception e) {
             System.out.println(e.getStackTrace().toString());
+            return e.getStackTrace().toString();
         }
     }
     @PostMapping(path="/login") // Map ONLY POST Requests
