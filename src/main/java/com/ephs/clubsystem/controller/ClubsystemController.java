@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
-
+@CrossOrigin
 @Controller
 @Service
 public class ClubsystemController {
