@@ -2,6 +2,7 @@ package com.ephs.clubsystem.model;
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
+@Table(name="event", schema = "public")
 @Entity
 public class Event {
     @Id
