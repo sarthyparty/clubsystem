@@ -23,12 +23,13 @@ public class ClubController {
 
     @PostMapping(path = "") // Map ONLY POST Requests
     public @ResponseBody
-    String addNewClub(@RequestParam String name, @RequestParam String template) {
+    String addNewClub(@RequestParam String name, @RequestParam String template, @RequestParam String defaults) {
         // @ResponseBody means the returned String is the response, not a view name
         // @RequestParam means it is a parameter from the GET or POST request
         if (clubRepository.findByName(name).size()==0) {
             Club n = new Club();
             n.setName(name);
+            n.setDefaults(defaults);
             n.setTemplate(template);
             clubRepository.save(n);
             return "Saved";
