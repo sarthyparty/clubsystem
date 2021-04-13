@@ -1,6 +1,7 @@
 package com.ephs.clubsystem.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -42,6 +43,8 @@ public class Club {
     public void setDefaults(String defaults) {
         this.defaults = defaults;
     }
+    @OneToMany(mappedBy = "club_")
+    private List<Event> events;
 
     @Override
     public int hashCode() {

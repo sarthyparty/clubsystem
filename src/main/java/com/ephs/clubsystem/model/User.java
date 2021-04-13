@@ -54,10 +54,13 @@ public class User {
     @Override
     public String toString() {
         return "Student: {" +
-                "id: " + id +
+                "id: " + id+
                 ", email: '" + email + '\'' +
                 ", password: '" + password + '\'' +
                 '}';
     }
+    @ManyToMany(mappedBy = "users")
+    Set<Event> events;
+
 
 }
