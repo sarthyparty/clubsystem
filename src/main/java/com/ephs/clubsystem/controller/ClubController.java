@@ -13,13 +13,29 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
+
+@CrossOrigin
 @Controller
 @Service
 @RequestMapping(path="/club")
 public class ClubController {
     @Autowired
     private ClubRepository clubRepository;
+
+    public String getSaltString() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 11) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+
+    }
 
     @PostMapping(path = "") // Map ONLY POST Requests
     public @ResponseBody
@@ -31,6 +47,7 @@ public class ClubController {
             n.setName(name);
             n.setDefaults(defaults);
             n.setTemplate(template);
+            n.setCode(name + getSaltString());
             clubRepository.save(n);
             return "Saved";
         } else {

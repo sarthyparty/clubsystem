@@ -5,8 +5,11 @@ import com.ephs.clubsystem.repository.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
@@ -51,7 +54,7 @@ public class UserController {
             return msg;
         } else {
             if (s.get(0).getPassword().equals(password)) {
-                String token = getJWTToken(email);
+                String token = getJWTToken(s.get(0).getId());
                 return s.get(0).toString() + "\n" + token;
             } else {
                 return "Login Failed";
@@ -60,8 +63,12 @@ public class UserController {
     }
     @GetMapping(path="/{id}")
     public @ResponseBody
-    String getUser(@PathVariable long id) {
-        return userRepository.findById(id).get(0).toString();
+    Object getUser(@PathVariable long id) {
+        if (id == Integer.parseInt((String) SecurityContextHolder.getContext().getAuthentication().getPrincipal())) {
+            return userRepository.findById(id).get(0).toString();
+        } else {
+            return new ResponseEntity(HttpStatus.FORBIDDEN);
+        }
     }
 
     @GetMapping(path="/all")
@@ -69,15 +76,15 @@ public class UserController {
         // This returns a JSON or XML with the users
         return userRepository.findAll();
     }
-    private String getJWTToken(String username) {
+    private String getJWTToken(long id) {
         String secretKey = "mySecretKey";
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils
                 .commaSeparatedStringToAuthorityList("ROLE_USER");
 
         String token = Jwts
                 .builder()
-                .setId("softtekJWT")
-                .setSubject(username)
+                .setId("clubsystem")
+                .setSubject(String.valueOf(id))
                 .claim("authorities",
                         grantedAuthorities.stream()
                                 .map(GrantedAuthority::getAuthority)

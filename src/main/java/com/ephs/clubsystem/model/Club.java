@@ -13,6 +13,7 @@ public class Club {
     private String name;
     private String template;
     private String defaults;
+    private String code;
     @OneToMany(mappedBy = "user")
     private Set<UserClubRelationship> userClubRelationships;
 
@@ -43,6 +44,10 @@ public class Club {
     public void setDefaults(String defaults) {
         this.defaults = defaults;
     }
+
+    public String getCode() { return code; }
+    public void setCode(String code) {this.code = code; }
+
     @OneToMany(mappedBy = "club_")
     private List<Event> events;
 

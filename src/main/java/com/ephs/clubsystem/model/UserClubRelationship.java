@@ -8,17 +8,35 @@ public class UserClubRelationship {
     private UserClubKey id;
 
     @ManyToOne
-    @MapsId("studentId")
+    @MapsId("userid")
     @JoinColumn(name = "userid")
     private User user;
 
     @ManyToOne
-    @MapsId("courseId")
+    @MapsId("userid")
     @JoinColumn(name = "clubid")
     private Club club;
-
     private String fields;
     private boolean isAdmin;
 
+    public UserClubRelationship(User user, Club club) {
+        this.user = user;
+        this.club = club;
+    }
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
 
+    public boolean getAdmin() {
+        return isAdmin;
+    }
+
+    @Override
+    public String toString() {
+        return "UserClubRelationship: {" +
+                "userid: " + user.getId() +
+                ", clubid: '" + club.getId() + '\'' +
+                ", isAdmin: '" + isAdmin + '\'' +
+                '}';
+    }
 }

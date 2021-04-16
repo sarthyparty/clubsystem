@@ -7,8 +7,8 @@ import java.io.Serializable;
 @Embeddable
 public class UserClubKey implements Serializable {
     @Column(name = "userid")
-    private Long studentId;
+    private Long userid;
 
     @Column(name = "clubid")
-    private Long courseId;
+    private Long clubid;
 }
